@@ -1,2 +1,92 @@
+// == IMPORTS =================================================================
+
 @import "partials/normalize";
 @import "partials/typography";
+@import "partials/buttons";
+@import "partials/colors";
+
+// == RULES ===================================================================
+
+.title {
+  background-image: url("../../assets/images/title-pattern.gif");
+  background-size: 100%;
+  color: $head-color;
+  font-family: $font-main;
+  font-size: $head-size;
+  font-weight: $head-weight;
+  letter-spacing: $head-spacing;
+  text-align: center;
+  padding: 15px 0;
+}
+
+
+.subtitle {
+  color: $subhead-color;
+  font-family: $font-main;
+  font-size: $subhead-size;
+  font-weight: $subhead-weight;
+  letter-spacing: $subhead-spacing;
+  text-align: center;
+}
+
+.search-container {
+  border-right: 1px solid $line-color;
+}
+
+label {
+  color: $primary-color;
+  font-family: $font-main;
+  font-size: $primary-size;
+  font-weight: $light-weight;
+  letter-spacing: $primary-spacing;
+}
+
+#userInput {
+  color: $primary-color;
+  font-family: $font-main;
+  font-size: $primary-size;
+  font-weight: $light-weight;
+}
+
+#submitBtn {
+  border: $btn-style;
+  font-family: $font-main;
+  font-size: $btn-text-size;
+  font-weight: $primary-weight;
+  margin-bottom: 0px;
+
+  &:hover {
+    background-image: url("../../assets/images/title-pattern.gif");;
+    border: $btn-style-hover;
+    color: $btn-text-color-hover;
+  }
+}
+
+.btn {
+  padding: 0 37px;
+}
+
+button {
+  border: $btn-style;
+  font-family: $font-main;
+  font-size: $btn-text-size;
+  font-weight: $primary-weight;
+
+  &:hover {
+    background-color: $btn-color-hover;
+    border: $btn-style-hover;
+    color: $btn-text-color-hover;
+  }
+}
+
+.card {
+  border: $btn-style;
+  border-radius: 20px;
+  padding: 30px;
+}
+
+.rating {
+  font-family: $font-main;
+  font-size: $subhead-size;
+  text-align: center;
+}
