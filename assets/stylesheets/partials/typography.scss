@@ -1,5 +1,31 @@
 // == Font families ===========================================================
+$font-main: 'Open Sans', 'Helvetica', Arial, sans-serif; //Universal font
+
+
 
 // == Font sizing =============================================================
+$head-size: 6em; //for the header
 
-// == Colors ================================================================== 
+$subhead-size: 1.5em; //for the subhead
+
+$primary-size: 1em; //default font size
+
+
+// == Font spacing & weight ===================================================
+$head-spacing: 0.05em; //for the header
+$head-weight: 700; //for the header
+
+$subhead-spacing: 0.03em; //for the subhead
+$subhead-weight: 300; //for the subhead
+
+$primary-spacing: 0.03em; //default font spacing
+$primary-weight: 400; //default font weight
+
+$light-weight: 300; //light font weight
+
+// == Colors ==================================================================
+$head-color: #fff; //for the header
+
+$subhead-color: #9a9a9a; //for the subhead
+
+$primary-color: #515151; //default font color
