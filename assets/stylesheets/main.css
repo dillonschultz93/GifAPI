@@ -1,3 +1,70 @@
+.title {
+  background-image: url("../../assets/images/title-pattern.gif");
+  background-size: 100%;
+  color: #fff;
+  font-family: "Open Sans", "Helvetica", Arial, sans-serif;
+  font-size: 6em;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-align: center;
+  padding: 15px 0; }
 
+.subtitle {
+  color: #9a9a9a;
+  font-family: "Open Sans", "Helvetica", Arial, sans-serif;
+  font-size: 1.5em;
+  font-weight: 300;
+  letter-spacing: 0.03em;
+  text-align: center; }
+
+.search-container {
+  border-right: 1px solid #E1E1E1; }
+
+label {
+  color: #515151;
+  font-family: "Open Sans", "Helvetica", Arial, sans-serif;
+  font-size: 1em;
+  font-weight: 300;
+  letter-spacing: 0.03em; }
+
+#userInput {
+  color: #515151;
+  font-family: "Open Sans", "Helvetica", Arial, sans-serif;
+  font-size: 1em;
+  font-weight: 300; }
+
+#submitBtn {
+  border: 1px solid #515151;
+  font-family: "Open Sans", "Helvetica", Arial, sans-serif;
+  font-size: 0.7em;
+  font-weight: 400;
+  margin-bottom: 0px; }
+  #submitBtn:hover {
+    background-image: url("../../assets/images/title-pattern.gif");
+    border: 1px solid #fff;
+    color: #fff; }
+
+.btn {
+  padding: 0 37px; }
+
+button {
+  border: 1px solid #515151;
+  font-family: "Open Sans", "Helvetica", Arial, sans-serif;
+  font-size: 0.7em;
+  font-weight: 400; }
+  button:hover {
+    background-color: #538eff;
+    border: 1px solid #fff;
+    color: #fff; }
+
+.card {
+  border: 1px solid #515151;
+  border-radius: 20px;
+  padding: 30px; }
+
+.rating {
+  font-family: "Open Sans", "Helvetica", Arial, sans-serif;
+  font-size: 1.5em;
+  text-align: center; }
 
 /*# sourceMappingURL=main.css.map */
