@@ -41,14 +41,14 @@ label {
   letter-spacing: $primary-spacing;
 }
 
-#userInput {
+#user-input {
   color: $primary-color;
   font-family: $font-main;
   font-size: $primary-size;
   font-weight: $light-weight;
 }
 
-#submitBtn {
+#submit-btn {
   border: $btn-style;
   font-family: $font-main;
   font-size: $btn-text-size;
@@ -79,14 +79,32 @@ button {
   }
 }
 
-.card {
+#gif-area {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.gif-div {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   border: $btn-style;
   border-radius: 20px;
-  padding: 30px;
+  margin: 0 10px 20px 10px;
+  padding: 5px;
+  width: 36%;
+
+}
+
+.gif-item {
+  border-radius: 10px;
+  margin-top: 10px;
 }
 
 .rating {
   font-family: $font-main;
   font-size: $primary-size;
   text-align: center;
+  margin-top: 10px;
 }
