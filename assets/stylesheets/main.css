@@ -27,19 +27,19 @@ label {
   font-weight: 300;
   letter-spacing: 0.03em; }
 
-#userInput {
+#user-input {
   color: #515151;
   font-family: "Open Sans", "Helvetica", Arial, sans-serif;
   font-size: 1em;
   font-weight: 300; }
 
-#submitBtn {
+#submit-btn {
   border: 1px solid #515151;
   font-family: "Open Sans", "Helvetica", Arial, sans-serif;
   font-size: 0.7em;
   font-weight: 400;
   margin-bottom: 0px; }
-  #submitBtn:hover {
+  #submit-btn:hover {
     background-image: url("../../assets/images/button.gif");
     border: 1px solid #fff;
     color: #fff; }
@@ -57,14 +57,29 @@ button {
     border: 1px solid #fff;
     color: #fff; }
 
-.card {
+#gif-area {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; }
+
+.gif-div {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   border: 1px solid #515151;
   border-radius: 20px;
-  padding: 30px; }
+  margin: 0 10px 20px 10px;
+  padding: 5px;
+  width: 36%; }
+
+.gif-item {
+  border-radius: 10px;
+  margin-top: 10px; }
 
 .rating {
   font-family: "Open Sans", "Helvetica", Arial, sans-serif;
   font-size: 1em;
-  text-align: center; }
+  text-align: center;
+  margin-top: 10px; }
 
 /*# sourceMappingURL=main.css.map */
