@@ -2,6 +2,9 @@ $(document).ready(function(){
 
   // == GLOBALS ===============================================================
 
+  // instantiating clipboard.js
+  var clipboard = new Clipboard(".copy-btn");
+
   // an array of search terms
   var reactionArray = [
     "sad",
@@ -54,6 +57,8 @@ $(document).ready(function(){
     // grabs the data attribute of the button clicked
     var reaction = $(this).data("reaction");
     console.log(reaction); // debugging
+    // create a heading that indicates the current
+    var reactionHeading = $("<h2 class='subtitle'>");
     // creates a query URL based on the data of the button
     var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + reaction + "&limit=10&api_key=" + API_KEY;
     console.log(queryURL); // debugging
@@ -62,10 +67,20 @@ $(document).ready(function(){
       method: "GET"
     }).done(function(response){
       console.log(response);// debugging
-      // empty out the #gif-area div
+
+      // empty out the #gif-area and #gif-cat divs
+      $("#gif-cat").empty();
       $("#gif-area").empty();
+
       // store the data from the response
       var results = response.data;
+      // create an h2 element to display the current search term
+      var reactionHead = $("<h2 class='gif-cat'>")
+          .text(reaction);
+      var copyInstructions = $("<p class='instructions'>")
+          .text("Click the button below each .gif to save the URL to your clipboard");
+      $("#gif-cat").prepend(reactionHead, copyInstructions);
+
       // loop through the response array
       for(var i = 0; i < results.length; i++) {
         // create a div that contains the gif and rating
@@ -76,18 +91,27 @@ $(document).ready(function(){
         var ratingPara = $("<p class='rating'>").text("Rating: " + rating);
         // create an img tag that contains the gif from the response
         gif = $("<img>");
+        // add a class of .gif-item to the image
         gif.addClass("gif-item");
+        // set the state of the still and animated gifs
         stillGif = results[i].images.fixed_width_still.url;
         animatedGif = results[i].images.fixed_width.url;
+        // set a source for the image tag
         gif.attr("src", stillGif);
+        // set data atributes for the hover function to use later
         gif.attr("data-state", "still");
         gif.attr("data-still", stillGif);
         gif.attr("data-animate", animatedGif);
-
+        // prepend the gif items to index.html
         gifContainer.prepend(ratingPara);
         gifContainer.prepend(gif);
-
         $("#gif-area").prepend(gifContainer);
+        // creates a "copy to clipboard" button
+        var copyBtn = $("<button>")
+            .addClass("u-full-width copy-btn")
+            .attr("data-clipboard-text", animatedGif)
+            .text("Copy to clipboard");
+        $(gifContainer).append(copyBtn);
       }
     });
   });
@@ -123,6 +147,24 @@ $(document).ready(function(){
     renderBtns();
     // empty out the user input form
     $("#user-input").val("");
+  });
+
+  // function that returns a
+  clipboard.on('success', function(event) {
+    $(event.trigger).text("Copied!");
+    $(event.trigger).addClass("copy-btn-activated");
+    event.clearSelection();
+    setTimeout(function() {
+      $(event.trigger).text("Copy to clipboard");
+      $(event.trigger).removeClass("copy-btn-activated");
+    }, 2500);
+    });
+
+    clipboard.on('error', function(event) {
+    $(event.trigger).text("Right CLick on Image");
+    setTimeout(function() {
+      $(event.trigger).text("Copy to clipboard");
+    }, 2500);
   });
 
   // == LOGIC =================================================================
