@@ -9,8 +9,8 @@
 
 .title {
   background-image: url("../../assets/images/title-pattern.gif");
-  background-size: contain;
-  color: $head-color;
+  background-size: cover;
+  color: #e6bd00;
   font-family: $font-main;
   font-size: $head-size;
   font-weight: $head-weight;
@@ -62,10 +62,6 @@ label {
   }
 }
 
-.btn {
-  padding: 0 37px;
-}
-
 button {
   border: $btn-style;
   font-family: $font-main;
@@ -79,6 +75,24 @@ button {
   }
 }
 
+.gif-cat {
+  color: $primary-color;
+  font-family: $font-main;
+  font-size: $subhead-size;
+  font-weight: $heavy-weight;
+  letter-spacing: $head-spacing;
+  text-align: center;
+}
+
+.instructions {
+  color: $primary-color;
+  font-family: $font-main;
+  font-size: $primary-size;
+  font-weight: $light-weight;
+  letter-spacing: $primary-spacing;
+  text-align: center;
+}
+
 #gif-area {
   display: flex;
   flex-wrap: wrap;
@@ -86,11 +100,12 @@ button {
 }
 
 .gif-div {
+  align-content: space-between;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   border: $btn-style;
-  border-radius: 20px;
+  border-radius: 5px;
   margin: 0 10px 20px 10px;
   padding: 5px;
   width: 36%;
@@ -98,7 +113,7 @@ button {
 }
 
 .gif-item {
-  border-radius: 10px;
+  border-radius: 8px;
   flex-shrink: 4;
   margin-top: 10px;
   width: 100%;
@@ -109,4 +124,25 @@ button {
   font-size: $primary-size;
   text-align: center;
   margin-top: 10px;
+}
+
+.copy-btn {
+  border: $btn-style;
+  font-family: $font-main;
+  font-size: $btn-text-size;
+  font-weight: $primary-weight;
+
+  &:hover {
+    background-color: $btn-color-hover;
+    border: $btn-style-hover;
+    color: $btn-text-color-hover;
+  }
+}
+
+.copy-btn-activated {
+  background-color: $copied-color;
+  border: none;
+  font-family: $font-main;
+  font-size: $btn-text-size;
+  font-weight: $primary-weight;
 }

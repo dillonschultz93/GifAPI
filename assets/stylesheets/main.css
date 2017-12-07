@@ -1,7 +1,7 @@
 .title {
   background-image: url("../../assets/images/title-pattern.gif");
-  background-size: contain;
-  color: #fcff8d;
+  background-size: cover;
+  color: #e6bd00;
   font-family: "Open Sans", "Helvetica", Arial, sans-serif;
   font-size: 6em;
   font-weight: 700;
@@ -44,9 +44,6 @@ label {
     border: 1px solid #fff;
     color: #fff; }
 
-.btn {
-  padding: 0 37px; }
-
 button {
   border: 1px solid #515151;
   font-family: "Open Sans", "Helvetica", Arial, sans-serif;
@@ -57,23 +54,40 @@ button {
     border: 1px solid #fff;
     color: #fff; }
 
+.gif-cat {
+  color: #515151;
+  font-family: "Open Sans", "Helvetica", Arial, sans-serif;
+  font-size: 1.5em;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-align: center; }
+
+.instructions {
+  color: #515151;
+  font-family: "Open Sans", "Helvetica", Arial, sans-serif;
+  font-size: 1em;
+  font-weight: 300;
+  letter-spacing: 0.03em;
+  text-align: center; }
+
 #gif-area {
   display: flex;
   flex-wrap: wrap;
   justify-content: center; }
 
 .gif-div {
+  align-content: space-between;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   border: 1px solid #515151;
-  border-radius: 20px;
+  border-radius: 5px;
   margin: 0 10px 20px 10px;
   padding: 5px;
   width: 36%; }
 
 .gif-item {
-  border-radius: 10px;
+  border-radius: 8px;
   flex-shrink: 4;
   margin-top: 10px;
   width: 100%; }
@@ -83,5 +97,22 @@ button {
   font-size: 1em;
   text-align: center;
   margin-top: 10px; }
+
+.copy-btn {
+  border: 1px solid #515151;
+  font-family: "Open Sans", "Helvetica", Arial, sans-serif;
+  font-size: 0.7em;
+  font-weight: 400; }
+  .copy-btn:hover {
+    background-color: #538eff;
+    border: 1px solid #fff;
+    color: #fff; }
+
+.copy-btn-activated {
+  background-color: #43e680;
+  border: none;
+  font-family: "Open Sans", "Helvetica", Arial, sans-serif;
+  font-size: 0.7em;
+  font-weight: 400; }
 
 /*# sourceMappingURL=main.css.map */
