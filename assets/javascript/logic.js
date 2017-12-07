@@ -56,17 +56,14 @@ $(document).ready(function(){
   $("#btn-area").on("click", ".reaction", function() {
     // grabs the data attribute of the button clicked
     var reaction = $(this).data("reaction");
-    console.log(reaction); // debugging
     // create a heading that indicates the current
     var reactionHeading = $("<h2 class='subtitle'>");
     // creates a query URL based on the data of the button
     var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + reaction + "&limit=10&api_key=" + API_KEY;
-    console.log(queryURL); // debugging
     $.ajax({
       url: queryURL,
       method: "GET"
     }).done(function(response){
-      console.log(response);// debugging
 
       // empty out the #gif-area and #gif-cat divs
       $("#gif-cat").empty();
@@ -140,7 +137,6 @@ $(document).ready(function(){
     var newBtn = $("#user-input").val().trim();
     // push the user input to the original array
     reactionArray.push(newBtn);
-    console.log(reactionArray); // debugging
     // empty the #btn-area div
     $("#btn-area").empty();
     // re-render the buttons from the array
@@ -149,17 +145,20 @@ $(document).ready(function(){
     $("#user-input").val("");
   });
 
-  // function that returns a
+  // event listener that listens for a successful copy command
   clipboard.on('success', function(event) {
+    //change text inside the button to "Copied!"
     $(event.trigger).text("Copied!");
+    //change class to "copy-btn-activated"
     $(event.trigger).addClass("copy-btn-activated");
     event.clearSelection();
+    //setTimeout function that restores the copy button to it's original state
     setTimeout(function() {
       $(event.trigger).text("Copy to clipboard");
       $(event.trigger).removeClass("copy-btn-activated");
     }, 2500);
     });
-
+    //event listener that istens for an unsuccessful copy command
     clipboard.on('error', function(event) {
     $(event.trigger).text("Right CLick on Image");
     setTimeout(function() {
