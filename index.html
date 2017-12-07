@@ -19,16 +19,19 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
 
   <!-- JavaScript -->
-  <script type="text/javascript" src="assets/javascript/logic.js">
+  <script type="text/javascript" src="assets/javascript/logic.js"></script>
 
-  </script>
+  <!-- clipboard -->
+  <!-- used from: https://clipboardjs.com/ -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.min.js"></script>
+
 </head>
 <body>
 
   <div class="container">
     <div class="row">
       <div class="twelve columns">
-        <h1 class="title">GIFS!</h1>
+        <h1 class="title">REACTION GIFS!</h1>
         <h3 class="subtitle">Emotions are stupid. Convey them with a gif instead!</h3>
         <hr>
       </div>
@@ -57,6 +60,9 @@
       </div>
       <!-- Gif container -->
       <div class="eight columns gif-container">
+        <div class="row" id="gif-cat">
+          <!-- <h2 class="subtitle">current gif category</h2> -->
+        </div>
         <div class="row" id="gif-area">
           <!-- <img src="source from giphy API" alt=""> -->
           <!-- <p class="rating">Rating: <span id="API-rating"></span></p> -->
