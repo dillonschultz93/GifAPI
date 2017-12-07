@@ -19,6 +19,14 @@ $(document).ready(function(){
   // a variable that holds the giphy API key
   var API_KEY = "UnYFSqq0hqT872jGWLpVhuCsMRXlABaa";
 
+  // stores the src URL of the still gif from the AJAX call
+  var stillGif;
+  // store the src URL of the animated gif form the AJAX call
+  var animatedGif;
+
+  // store the image being created in the AJAX call
+  var gif;
+
   // == FUNCTIONS =============================================================
 
   // a function that generates buttons based off of the reaction array
@@ -49,7 +57,6 @@ $(document).ready(function(){
     // creates a query URL based on the data of the button
     var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + reaction + "&limit=10&api_key=" + API_KEY;
     console.log(queryURL); // debugging
-
     $.ajax({
       url: queryURL,
       method: "GET"
@@ -68,9 +75,14 @@ $(document).ready(function(){
         // create a p tag that contains the rating from the response
         var ratingPara = $("<p class='rating'>").text("Rating: " + rating);
         // create an img tag that contains the gif from the response
-        var gif = $("<img>");
+        gif = $("<img>");
         gif.addClass("gif-item");
-        gif.attr("src", results[i].images.fixed_width.url);
+        stillGif = results[i].images.fixed_width_still.url;
+        animatedGif = results[i].images.fixed_width.url;
+        gif.attr("src", stillGif);
+        gif.attr("data-state", "still");
+        gif.attr("data-still", stillGif);
+        gif.attr("data-animate", animatedGif);
 
         gifContainer.prepend(ratingPara);
         gifContainer.prepend(gif);
@@ -79,7 +91,23 @@ $(document).ready(function(){
       }
     });
   });
-  // a function that listens to a click event and pushes
+
+  // a function that listens to a hover event on the gifs in the
+  // #gif-area div
+  $("#gif-area").on("mouseenter mouseleave", ".gif-item", function(){
+    // store the state of the gif clicked
+    var state = $(this).data("state");
+    //
+    if(state === "still") {
+      $(this).attr("src", $(this).attr("data-animate"));
+      $(this).data("state", "animate");
+    } else {
+      $(this).attr("src", $(this).attr("data-still"));
+      $(this).data("state", "still");
+    }
+  });
+
+  // a function that listens to a click event on the submit button and pushes
   // a user's inputs to the original array of strings
   $("#submit-btn").on("click", function(event){
     //used to prevent the form from submitting itself
@@ -89,6 +117,8 @@ $(document).ready(function(){
     // push the user input to the original array
     reactionArray.push(newBtn);
     console.log(reactionArray); // debugging
+    // empty the #btn-area div
+    $("#btn-area").empty();
     // re-render the buttons from the array
     renderBtns();
     // empty out the user input form
